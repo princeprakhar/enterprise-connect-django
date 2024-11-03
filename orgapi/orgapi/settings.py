@@ -76,11 +76,16 @@ WSGI_APPLICATION = "orgapi.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'orgapi',        # Name of your database
+        'USER': 'root',           # Database username
+        'PASSWORD': '4873',       # Database password
+        'HOST': '127.0.0.1',      # Set to 'localhost' or '127.0.0.1' for local MySQL
+        'PORT': '3306',           # Default MySQL port
     }
 }
+
 
 
 # Password validation
