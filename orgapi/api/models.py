@@ -11,11 +11,12 @@ class Company(models.Model):
   date = models.DateTimeField(auto_now_add=True)
   active = models.BooleanField(default=True)
   
-class Employee():
-  employee_id = models.AutoField(primary_key= True)
+class Employee(models.Model):
   name= models.CharField(max_length=30)
   username = models.EmailField()
   password = models.CharField(max_length=30,unique=True)
-  company = models.CharField(max_length=30)
+  location = models.CharField(max_length=250)
+  position = models.CharField(max_length=30,choices=(('manager','Manager'),('developer','Developer'),('student','Student')))
+  company = models.ForeignKey(Company,on_delete=models.CASCADE)
   about = models.TextField()
   
